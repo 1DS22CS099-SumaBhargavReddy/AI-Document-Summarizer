@@ -1,0 +1,78 @@
+.upload-card {
+  width: 50%;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8ecf3;
+}
+
+.upload-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0a3069;
+  margin-bottom: 16px;
+}
+
+.file-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d6dbe6;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.upload-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-btn:hover {
+  background: #1e4fc6;
+}
+
+.error-msg {
+  color: #d12727;
+  background: #ffe5e5;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.file-tag {
+  background: #e6f4ff;
+  border-left: 5px solid #1a73e8;
+  padding: 10px;
+  margin-top: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #084c9e;
+}
+
+/* Loader Animation */
+.loader {
+  border: 3px solid #e8e8e8;
+  border-top: 3px solid #2563eb;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
