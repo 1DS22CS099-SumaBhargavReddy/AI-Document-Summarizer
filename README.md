@@ -1,143 +1,70 @@
-## 📌 AI Document Summarizer
+# Getting Started with Create React App
 
-A **full-stack system** designed to efficiently process and summarize PDF/TXT documents using AI. It provides **section-wise summaries** and a **complete, concise document overview**, with export options for easy sharing and integration.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
------
+## Available Scripts
 
-### ✨ Features & Functionality
+In the project directory, you can run:
 
-| Feature | Status | Description |
-| :--- | :--- | :--- |
-| **PDF/TXT Upload** | ✅ | Accepts standard document formats for processing. |
-| **Text Extraction** | **PDFBox + Tika** | Uses robust Apache libraries for accurate text extraction from uploaded files. |
-| **Chunk Splitting** | **Smart 1800-char** | Splits extracted text into manageable chunks (approx. 1800 characters) for efficient AI processing. |
-| **AI Summaries** | Per-chunk + combined | Generates individual summaries for each text chunk and a final **overall document summary**. |
-| **Export Options** | Yes | Supports **Copy to Clipboard**, **Download Summary** (TXT), and **Download JSON** export. |
-| **Rate Limit Recovery** | Graceful retry | Implements logic to handle and recover from OpenAI rate limit errors (429). |
+### `npm start`
 
------
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### 🏗️ Tech Stack
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-| Layer | Technology |
-| :--- | :--- |
-| **Frontend** | React + Axios |
-| **Backend** | **Spring Boot (Java 17)** |
-| **Database** | **PostgreSQL** |
-| **AI Model** | **OpenAI gpt-4o-mini** via `/v1/responses` |
-| **File Parsing** | Apache Tika, Apache PDFBox |
-| **Environment** | `.env` variables |
+### `npm test`
 
------
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### 🌐 System Design Overview
+### `npm run build`
 
-The system follows a typical microservice pattern where the Frontend communicates with the Spring Boot Backend, which orchestrates document parsing, AI summarization, and persistence in the PostgreSQL database.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
------
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### 📂 Project Structure Highlights
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-The project is logically divided into `backend` (Spring Boot) and `frontend` (React) components:
+### `npm run eject`
 
-  * **`backend/`**:
-      * **`DocumentController.java`**: Handles API requests (upload, get summaries).
-      * **`DocumentService.java`**: Core business logic (chunking, calling OpenAI, saving to DB).
-      * **`OpenAIClient.java`**: Dedicated service for communicating with the OpenAI API.
-      * **`Document.java`**: JPA entity for database persistence.
-  * **`frontend/`**:
-      * **`Upload.js`**: Component for handling file uploads.
-      * **`SummaryDisplay.js`**: Component for rendering and exporting generated summaries.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
------
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### 🚀 Setup and Local Deployment
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Follow these steps to get the application running locally:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-#### 1️⃣ Clone Repository
+## Learn More
 
-```bash
-git clone https://github.com/yourusername/ai-document-summarizer.git
-cd ai-document-summarizer
-```
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-#### 2️⃣ Environment Variables
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Create a file named **`.env`** in the **`backend`** root directory:
+### Code Splitting
 
-```bash
-OPENAI_API_KEY=sk-...
-OPENAI_API_URL=https://api.openai.com/v1/responses
-OPENAI_MODEL=gpt-4o-mini
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-#### 3️⃣ Database Setup (PostgreSQL)
+### Analyzing the Bundle Size
 
-Set up the database and configure the Spring Boot application:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-1.  **Start PostgreSQL** and create the database:
-    ```bash
-    psql -U postgres
-    CREATE DATABASE summarydb;
-    ```
-2.  **Configure DB in `backend/src/main/resources/application.properties`**:
-    ```properties
-    spring.datasource.url=jdbc:postgresql://localhost:5432/summarydb
-    spring.datasource.username=postgres
-    spring.datasource.password=your-password
-    spring.jpa.hibernate.ddl-auto=update
-    ```
+### Making a Progressive Web App
 
-#### 4️⃣ Backend Setup (Spring Boot)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-```bash
-cd backend
-mvn clean install
-mvn spring-boot:run
-```
+### Advanced Configuration
 
-🚪 App Runs At: **`http://localhost:8080`**
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-#### 5️⃣ Frontend Setup (React)
+### Deployment
 
-```bash
-cd frontend
-npm install
-npm start
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-Runs At: **`http://localhost:3000`**
+### `npm run build` fails to minify
 
------
-
-### 📈 Chunking Logic
-
-The application uses a simple, yet effective, character-based chunking logic to segment the document's text before sending it to the AI model. This is crucial for managing token limits and optimizing summary quality.
-
-```java
-// Logic Highlight from DocumentService
-while (start < cleaned.length()) {
-    chunks.add(cleaned.substring(start, Math.min(start + maxLen, cleaned.length())));
-    start += maxLen;
-}
-```
-
-  * **`maxLen`** is approximately **1800 characters**.
-  * This ensures all parts of the document are processed sequentially.
-
------
-
-### 📸 Architecure Diagram and Sytem Design
-<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/d05dcc9c-be3d-4dbb-8e56-9e19f11be548" />
-
------
-
-### 🛠️ Troubleshooting Guide
-
-| Issue | Fix |
-| :--- | :--- |
-| **429 rate\_limit\_exceeded** | Wait 20–60 seconds, or review your OpenAI usage plan. |
-| **Summaries showing only in JSON** | Restart the application and consider lowering the concurrent chunk processing threads (if configured). |
-| **`.env` not loading** | Ensure the `.env` file is in the **backend root** and restart your IDE/Spring app. |
-| **Invalid API key** | Regenerate the key on the OpenAI platform and restart the Spring app. |
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
