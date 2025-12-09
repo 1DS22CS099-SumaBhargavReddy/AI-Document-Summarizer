@@ -1,0 +1,63 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# Environment Secrets
+.env
+*.env
+**/.env
+
+# Spring Boot config containing passwords
+src/main/resources/application.properties
+src/main/resources/application.yml
+
+# IDE / Build / OS Files
+target/
+.gradle/
+*.log
+node_modules/
+.DS_Store
+# Environment & credentials
+.env
+*.env
+**/.env
+application.properties
+application.yml
+
+# Node/React
+node_modules/
+build/
+dist/
+
+# Java
+target/
